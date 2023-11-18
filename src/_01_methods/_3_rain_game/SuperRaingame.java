@@ -41,7 +41,7 @@ import processing.core.PImage;
  *    textSize(16);
  *    text("Score: " + score, 20, 20);
  */
-public class RainGame extends PApplet {
+public class SuperRaingame extends PApplet {
     static final int WIDTH = 600;
     static final int HEIGHT = 600;
 
@@ -69,11 +69,13 @@ public class RainGame extends PApplet {
     	bucket.resize(100, 100);
         fill(0,0,255);
         stroke(0,0,255);
-        ellipse(300, 0, 10, 10);
+        int y1 = 0;
+		ellipse(300, y1, 10, 10);
+        y1 += 2;
     }
 
     static public void main(String[] args) {
-        PApplet.main(RainGame.class.getName());
+        PApplet.main(SuperRaingame.class.getName());
     }
     
     /*********************** DO NOT MODIFY THE CODE BELOW ********************/
