@@ -31,21 +31,28 @@ import processing.core.PApplet;
  */
 public class MagicWorms extends PApplet {
     static final int WIDTH = 600;
-    static final int HEIGHT = 400;
-
+    static final int HEIGHT = 600;
+    int x = 0;
+    int y = 0;
     @Override
     public void settings() {
         size(WIDTH, HEIGHT);
+
     }
 
     @Override
     public void setup() {
-
+    	//background(0,0,0);
     }
 
     @Override
     public void draw() {
-
+       // background(200,200,200);
+        makeMagical();
+        for (int i = 1; i < 601; i++) {
+        	fill(random(0,255),random(0,255),random(0,255));
+        	ellipse(getWormX(i),getWormY(i),5,5);
+        }
     }
 
     static public void main(String[] args) {
@@ -57,7 +64,7 @@ public class MagicWorms extends PApplet {
     float noiseInterval = PI;
 
     void makeMagical() {
-        fill(0, 0, 0, 10);
+        fill(0, 0, 0, 5);
         rect(0, 0, width, height);
         noStroke();
     }

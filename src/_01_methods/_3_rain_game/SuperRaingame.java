@@ -49,8 +49,11 @@ public class SuperRaingame extends PApplet {
     int bucketWidth = 50;
     int bucketHeight;
     PImage bucket;
-    int y;
-    int x;
+    int y=500;
+    int x= 300;
+    int y1 = 0;
+    int x1= (int) random(1,599);
+  
 
     // Sets the size of your canvas
     @Override
@@ -60,19 +63,36 @@ public class SuperRaingame extends PApplet {
 
     @Override
     public void setup() {
-    	background(255,0,0);
+    	background(255,255,255);
     }
 
     @Override
     public void draw() {
-    	bucket = loadImage("images/bucket.png");
-    	bucket.resize(100, 100);
-        fill(0,0,255);
+    	background(255,255,255);
+    	fill(0,0,255);
         stroke(0,0,255);
-        int y1 = 0;
-		ellipse(300, y1, 10, 10);
-        y1 += 2;
+ 		ellipse(x1, y1, 10, 10);
+    	fill(0,0,0);
+    	stroke(0,0,0);
+        rect(mouseX, y,75, 100);
+		if (y1 > 500) {
+			checkCatch();
+			x1=  (int) random(1,599);
+			y1 = 0;
+		}
+		y1 += 2;
+		fill(0, 0, 0);
+	    textSize(16);
+	    text("Score: " + score, 20, 20);
     }
+    
+    void checkCatch(){
+        if (x1 > mouseX && x1 < mouseX+75)
+           score++;
+        else if (score > 0) 
+           score--;
+       
+   }
 
     static public void main(String[] args) {
         PApplet.main(SuperRaingame.class.getName());
