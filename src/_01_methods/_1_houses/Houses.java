@@ -16,10 +16,10 @@ public class Houses {
 	rob.setY(300);
 	rob.setSpeed(999999);
 	rob.hide();
+	String color = JOptionPane.showInputDialog("What color do you want it");
+	String size1 = JOptionPane.showInputDialog("What size do you want it");
+	String which1 = JOptionPane.showInputDialog("Which do you want it, pointy or flat");
 	for (int i = 1; i < 11; i++) {
-		String color = JOptionPane.showInputDialog("What color do you want it");
-		String size1 = JOptionPane.showInputDialog("What size do you want it");
-		String which1 = JOptionPane.showInputDialog("Which do you want it, pointy or flat");
 		building(color,rob,size1,which1);
 	}
 	}
