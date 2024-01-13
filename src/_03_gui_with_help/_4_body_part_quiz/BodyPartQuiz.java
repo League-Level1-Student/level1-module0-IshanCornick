@@ -67,6 +67,7 @@ public class BodyPartQuiz {
 		// -- Tell them they are right and increase the score by 1
 		if (guess.equals(pull)) {
 			JOptionPane.showMessageDialog(null, "correct");
+			score +=1
 		}
 		// 6. Otherwise:
 		else {
