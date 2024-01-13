@@ -38,29 +38,37 @@ public class PhotoQuiz {
 		// 6. ask a question that relates to the image
 		String question = JOptionPane.showInputDialog("What color is it");
 		// 7. print "CORRECT" if the user gave the right answer
-		if (question == "black" || question == "red") {
+		if (question.equalsIgnoreCase("black") || question.equalsIgnoreCase("red")) {
 			JOptionPane.showMessageDialog(quizWindow, "correct");
 		}
 		else {
 			JOptionPane.showMessageDialog(quizWindow, "wrong");
 		}
 		// 8. print "INCORRECT" if the answer is wrong
-
+		
 		// 9. remove the component from the quiz window (you may not see the
 		// effect of this until step 12)
-		image.remove(quizWindow);
+		quizWindow.remove(image);
 
 		// 10. find another image and create it (might take more than one line
 		// of code)
-
+		String address1 = "https://media.istockphoto.com/id/183412466/photo/eastern-bluebirds-male-and-female.jpg?s=612x612&w=0&k=20&c=6_EQHnGedwdjM9QTUF2c1ce7cC3XtlxvMPpU5HAouhc=";
 		// 11. add the second image to the quiz window
-
+		Component image1;
+		image1 = createImage(address1);
+		quizWindow.add(image1);
 		// 12. pack the quiz window
-
+		quizWindow.pack();
 		// 13. ask another question
-
+		String question1 = JOptionPane.showInputDialog("How many birds are there?");
+		int questions = Integer.parseInt(question1);
 		// 14+ check answer, say if correct or incorrect, etc.
-
+		if (questions == 2) {
+			JOptionPane.showMessageDialog(null, "correct");
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "Incorrect");
+		}
 	}
 
 	private Component createImage(String imageUrl) {
